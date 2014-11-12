@@ -19,6 +19,8 @@ import os
 import sys
 import cPickle
 
+__version__ = '0.1.1'
+
 database = None
 config_file = os.path.expanduser('~/.devdb')
 
@@ -41,7 +43,7 @@ def main():
         register_command(path)
 
     command = database[path]
-    print("\033[35m %(path)s: %(command)r \033[m" % locals())
+    print("\033[35m%(path)s: %(command)r \033[m" % locals())
     run(command)
 
 def usage():
